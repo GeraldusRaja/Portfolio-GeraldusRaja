@@ -1,437 +1,629 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portofolio Digital</title>
-    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+    <link rel="icon" type="image/jpeg" href="image/Profile1.jpg" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3B82F6',
-                        secondary: '#1f2937'
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3B82F6",
+              secondary: "#1f2937",
+            },
+          },
+        },
+      };
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, #3B82F6 0%, #10B981 100%);
-        }
-        
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .project-card {
-            transition: all 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: scale(1.03);
-        }
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .hero-gradient {
+        background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%);
+      }
+
+      .skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-card {
+        transition: all 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: scale(1.03);
+      }
     </style>
-</head>
-<body class="bg-gradient-to-b from-gray-900 to-gray-100 text-gray-200">
-<!-- Header/Navbar -->
+  </head>
+  <body class="bg-gradient-to-b from-gray-900 to-gray-100 text-gray-200">
+    <!-- Header/Navbar -->
     <header class="fixed w-full bg-gray-900 shadow-md z-50">
-<nav class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold text-primary">
-                    <span>Portofolio</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#beranda" class="hover:text-primary transition">Beranda</a>
-                    <a href="#tentang" class="hover:text-primary transition">Tentang Saya</a>
-                    <a href="#portfolio" class="hover:text-primary transition">Portfolio</a>
-                    <a href="#pengalaman" class="hover:text-primary transition">Pengalaman</a>
-                </div>
-                <button class="md:hidden focus:outline-none" id="menu-btn">
-                    <i data-feather="menu"></i>
-                </button>
-            </div>
-            <!-- Mobile Menu -->
-            <div class="md:hidden hidden mt-4" id="mobile-menu">
-                <a href="#beranda" class="block py-2 hover:text-primary transition">Beranda</a>
-                <a href="#tentang" class="block py-2 hover:text-primary transition">Tentang Saya</a>
-                <a href="#portfolio" class="block py-2 hover:text-primary transition">Portfolio</a>
-                <a href="#pengalaman" class="block py-2 hover:text-primary transition">Pengalaman</a>
-            </div>
-        </nav>
+      <nav class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <div class="text-2xl font-bold text-primary">
+            <span>Geraldus Raja Muka</span>
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a href="#beranda" class="hover:text-primary transition">Beranda</a>
+            <a href="#tentang" class="hover:text-primary transition"
+              >Tentang Saya</a
+            >
+            <a href="#portfolio" class="hover:text-primary transition"
+              >Portfolio</a
+            >
+            <a href="#pengalaman" class="hover:text-primary transition"
+              >Pengalaman</a
+            >
+          </div>
+          <button class="md:hidden focus:outline-none" id="menu-btn">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden mt-4" id="mobile-menu">
+          <a href="#beranda" class="block py-2 hover:text-primary transition"
+            >Beranda</a
+          >
+          <a href="#tentang" class="block py-2 hover:text-primary transition"
+            >Tentang Saya</a
+          >
+          <a href="#portfolio" class="block py-2 hover:text-primary transition"
+            >Portfolio</a
+          >
+          <a href="#pengalaman" class="block py-2 hover:text-primary transition"
+            >Pengalaman</a
+          >
+        </div>
+      </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="beranda" class="pt-32 pb-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
-<div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Halo, Saya <span class="text-yellow-300">Geraldus Raja Muka</span></h1>
-                <p class="text-xl mb-6">Mahasiswa Teknik Informatika | Full Stack Developer</p>
-                <div class="flex space-x-4">
-                    <!-- <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">Hubungi Saya</a> -->
-                    <a href="#" class="border-2 border-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-primary transition">Download CV</a>
-                </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center">
-                <div class="relative">
-                    <img src="image/Profile1.jpg" alt="Profile Photo" class="w-64 h-64 rounded-full object-cover border-4 border-white shadow-xl">
-                    <div class="absolute -bottom-2 -right-2 bg-primary p-2 rounded-full">
-                        <i data-feather="award" class="text-white w-6 h-6"></i>
-                    </div>
-                </div>
-            </div>
+    <section
+      id="beranda"
+      class="pt-32 pb-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
+      <div
+        class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Halo, Saya <span class="text-yellow-300">Geraldus Raja Muka</span>
+          </h1>
+          <p class="text-xl mb-6">
+            Mahasiswa Teknik Informatika | Software Developer
+          </p>
+          <div class="flex space-x-4">
+            <!-- <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">Hubungi Saya</a> -->
+            <a
+              href="image/Test.pdf"
+              class="border-2 border-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-primary transition"
+              >Download CV</a
+            >
+          </div>
         </div>
+        <div class="md:w-1/2 flex justify-end">
+          <div class="relative ml-0">
+            <img
+              src="image/Profile1.jpg"
+              alt="Profile Photo"
+              class="w-64 h-64 rounded-full object-cover border-4 border-white shadow-xl" />
+            <div
+              class="absolute -bottom-2 -right-2 bg-primary p-2 rounded-full">
+              <i data-feather="award" class="text-white w-6 h-6"></i>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="tentang" class="py-20 bg-gray-100">
-<div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-secondary">Tentang <span class="text-primary">Saya</span></h2>
-            
-            <div class="flex flex-col md:flex-row items-center mb-16">
-                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
-                    <img src="http://static.photos/workspace/640x360/2" alt="About Photo" class="rounded-lg shadow-lg w-full max-w-md">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16 text-secondary">
+          Tentang <span class="text-primary">Saya</span>
+        </h2>
+
+        <div class="flex flex-col md:flex-row items-center mb-16">
+          <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+            <img
+              src="http://static.photos/workspace/640x360/2"
+              alt="About Photo"
+              class="rounded-lg shadow-lg w-full max-w-md" />
+          </div>
+          <div class="md:w-2/3 md:pl-12">
+            <h3 class="text-2xl font-semibold mb-4 text-secondary">
+              Mahasiswa Teknik Informatika Universitas Tarumanagara
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Saya adalah seorang mahasiswa semester 5 yang memiliki semangat
+              dalam mempelajari dunia teknologi. Dengan latar belakang
+              pendidikan di bidang Teknik Informatika, saya memiliki
+              ketertarikan yang besar terhadap pengembangan perangkat lunak dan
+              web.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-secondary">
+              <div class="flex items-center">
+                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                  <i data-feather="code" class="text-primary"></i>
                 </div>
-                <div class="md:w-2/3 md:pl-12">
-                    <h3 class="text-2xl font-semibold mb-4 text-secondary">Mahasiswa Teknik Informatika Universitas Tarumanagara</h3>
-                    <p class="text-gray-600 mb-6">
-                        Saya adalah seorang mahasiswa yang penuh semangat dalam mempelajari dunia teknologi. Dengan latar belakang pendidikan di bidang Teknik Informatika, saya memiliki ketertarikan yang besar terhadap pengembangan perangkat lunak dan web.
-                    </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-secondary">
-                        <div class="flex items-center">
-                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
-                                <i data-feather="code" class="text-primary"></i>
-                            </div>
-                            <span>Front-end Development</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
-                                <i data-feather="database" class="text-primary"></i>
-                            </div>
-                            <span>Back-end Development</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
-                                <i data-feather="cpu" class="text-primary"></i>
-                            </div>
-                            <span>Software Development</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
-                                <i data-feather="globe" class="text-primary"></i>
-                            </div>
-                            <span>Web Development</span>
-                        </div>
-                    </div>
+                <span>Front-end Development</span>
+              </div>
+              <div class="flex items-center">
+                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                  <i data-feather="database" class="text-primary"></i>
                 </div>
+                <span>Back-end Development</span>
+              </div>
+              <div class="flex items-center">
+                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                  <i data-feather="cpu" class="text-primary"></i>
+                </div>
+                <span>Software Development</span>
+              </div>
+              <div class="flex items-center">
+                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                  <i data-feather="globe" class="text-primary"></i>
+                </div>
+                <span>Web Development</span>
+              </div>
             </div>
-            
-            <h3 class="text-2xl font-semibold mb-6 text-center text-secondary">Keahlian <span class="text-primary">Saya</span></h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-secondary">
-                <div class="skill-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition">
-                    <div class="text-primary mb-4">
-                        <i data-feather="layout" class="w-10 h-10"></i>
-                    </div>
-                    <h4 class="font-semibold mb-2">Front-end</h4>
-                    <p class="text-gray-600 text-sm">HTML, CSS, JavaScript, React, Tailwind</p>
-                </div>
-                <div class="skill-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition">
-                    <div class="text-primary mb-4">
-                        <i data-feather="server" class="w-10 h-10"></i>
-                    </div>
-                    <h4 class="font-semibold mb-2">Back-end</h4>
-                    <p class="text-gray-600 text-sm">Node.js, Express, MongoDB, MySQL</p>
-                </div>
-                <div class="skill-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition">
-                    <div class="text-primary mb-4">
-                        <i data-feather="smartphone" class="w-10 h-10"></i>
-                    </div>
-                    <h4 class="font-semibold mb-2">Mobile</h4>
-                    <p class="text-gray-600 text-sm">React Native, Flutter</p>
-                </div>
-                <div class="skill-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition">
-                    <div class="text-primary mb-4">
-                        <i data-feather="tool" class="w-10 h-10"></i>
-                    </div>
-                    <h4 class="font-semibold mb-2">Tools</h4>
-                    <p class="text-gray-600 text-sm">Git, Docker, Figma, VS Code</p>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-gray-100">
-<div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-6 text-secondary">Proyek <span class="text-primary">Portfolio</span></h2>
-            <p class="text-gray-600 text-center mb-16 max-w-2xl mx-auto">Berikut adalah beberapa proyek yang pernah saya kerjakan baik secara mandiri maupun dalam tim selama perkuliahan.</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-secondary">
-                <!-- Project 1 -->
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md">
-                    <img src="http://static.photos/technology/640x360/3" alt="Project 1" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Aplikasi E-Commerce</h3>
-                        <p class="text-gray-600 mb-4">Platform belanja online dengan fitur keranjang belanja dan pembayaran digital.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">React</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Node.js</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
-                        </div>
-                        <a href="#" class="text-primary font-medium flex items-center">
-                            Lihat Detail <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md">
-                    <img src="http://static.photos/technology/640x360/4" alt="Project 2" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Sistem Informasi Akademik</h3>
-                        <p class="text-gray-600 mb-4">Sistem manajemen data akademik untuk sekolah dan universitas.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Laravel</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">MySQL</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Bootstrap</span>
-                        </div>
-                        <a href="#" class="text-primary font-medium flex items-center">
-                            Lihat Detail <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md">
-                    <img src="http://static.photos/technology/640x360/5" alt="Project 3" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Aplikasi Mobile To-Do List</h3>
-                        <p class="text-gray-600 mb-4">Aplikasi manajemen tugas dengan notifikasi dan sinkronisasi cloud.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Flutter</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Firebase</span>
-                        </div>
-                        <a href="#" class="text-primary font-medium flex items-center">
-                            Lihat Detail <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
+
+        <h3 class="text-2xl font-semibold mb-6 text-center text-secondary">
+          Keahlian <span class="text-primary">Saya</span>
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-secondary">
+          <div
+            class="skill-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition">
+            <div class="text-primary mb-4">
+              <i data-feather="layout" class="w-10 h-10"></i>
             </div>
-            <div class="text-center mt-12">
-                <button onclick="toggleProjects()" class="inline-block border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition">
-                    Lihat Semua Proyek
-                </button>
+            <h4 class="font-semibold mb-2">Front-end</h4>
+            <p class="text-gray-600 text-sm">
+              HTML, CSS, JavaScript, React, Bootstrap, Tailwind.
+            </p>
+          </div>
+          <div
+            class="skill-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition">
+            <div class="text-primary mb-4">
+              <i data-feather="server" class="w-10 h-10"></i>
             </div>
-            <div id="more-projects" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-                <!-- Project 4 -->
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md">
-                    <img src="http://static.photos/technology/640x360/6" alt="Project 4" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Landing Page Restoran</h3>
-                        <p class="text-gray-600 mb-4">Halaman promosi untuk restoran dengan menu online dan reservasi.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">HTML/CSS</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Tailwind</span>
-                        </div>
-                        <a href="#" class="text-primary font-medium flex items-center">
-                            Lihat Detail <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 5 -->
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md">
-                    <img src="http://static.photos/technology/640x360/7" alt="Project 5" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Dashboard Admin</h3>
-                        <p class="text-gray-600 mb-4">Antarmuka admin dengan visualisasi data dan grafik interaktif.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">React</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Chart.js</span>
-                        </div>
-                        <a href="#" class="text-primary font-medium flex items-center">
-                            Lihat Detail <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 6 -->
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md">
-                    <img src="http://static.photos/technology/640x360/8" alt="Project 6" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Portfolio Artist</h3>
-                        <p class="text-gray-600 mb-4">Gallery portfolio untuk seniman digital dengan efek scroll animasi.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">GSAP</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">CSS3</span>
-                        </div>
-                        <a href="#" class="text-primary font-medium flex items-center">
-                            Lihat Detail <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
+            <h4 class="font-semibold mb-2">Back-end</h4>
+            <p class="text-gray-600 text-sm">
+              Node.js, Express,js, MongoDB, PostgreSQL, phpMyAdmin.
+            </p>
+          </div>
+          <div
+            class="skill-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition">
+            <div class="text-primary mb-4">
+              <i data-feather="smartphone" class="w-10 h-10"></i>
             </div>
-</div>
-    </section>
-    <!-- Experience Section -->
-    <section id="pengalaman" class="py-20 bg-gray-100">
-<div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-secondary">Pengalaman <span class="text-primary">Saya</span></h2>
-            
-            <div class="max-w-3xl mx-auto text-secondary">
-                <!-- Experience 1 -->
-                <div class="mb-12">
-                    <div class="flex items-start">
-                        <div class="w-32 h-32 rounded-lg overflow-hidden mr-6">
-                            <img src="http://static.photos/workspace/320x240/10" alt="Experience 1" class="w-full h-full object-cover">
-</div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-1">Ketua Himpunan Mahasiswa Informatika</h3>
-                            <p class="text-gray-500 mb-2">Universitas Tarumanagara | 2022 - Sekarang</p>
-                            <p class="text-gray-600">
-                                Memimpin organisasi mahasiswa jurusan informatika dengan 150+ anggota. Bertanggung jawab atas kegiatan akademik dan non-akademik, termasuk seminar teknologi dan kompetisi programming.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Experience 2 -->
-                <div class="mb-12">
-                    <div class="flex items-start">
-                        <div class="w-32 h-32 rounded-lg overflow-hidden mr-6">
-                            <img src="http://static.photos/office/320x240/11" alt="Experience 2" class="w-full h-full object-cover">
-</div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-1">Developer Intern</h3>
-                            <p class="text-gray-500 mb-2">PT. Solusi Teknologi Indonesia | 2021</p>
-                            <p class="text-gray-600">
-                                Magang sebagai full-stack developer selama 6 bulan. Berkontribusi dalam pengembangan aplikasi manajemen proyek menggunakan React.js dan Node.js.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Experience 3 -->
-                <div class="mb-12">
-                    <div class="flex items-start">
-                        <div class="w-32 h-32 rounded-lg overflow-hidden mr-6">
-                            <img src="http://static.photos/education/320x240/12" alt="Experience 3" class="w-full h-full object-cover">
-</div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-1">Asisten Laboratorium</h3>
-                            <p class="text-gray-500 mb-2">Lab. Komputer Universitas Tarumanagara | 2020 - 2021</p>
-                            <p class="text-gray-600">
-                                Membantu dosen dalam praktikum pemrograman dasar dan struktur data. Bertugas memeriksa tugas mahasiswa dan memberikan konsultasi teknis.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <h4 class="font-semibold mb-2">Mobile</h4>
+            <p class="text-gray-600 text-sm">Flutter, React Native.</p>
+          </div>
+          <div
+            class="skill-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition">
+            <div class="text-primary mb-4">
+              <i data-feather="tool" class="w-10 h-10"></i>
             </div>
+            <h4 class="font-semibold mb-2">Tools</h4>
+            <p class="text-gray-600 text-sm">
+              Github, Figma, Visual Studio Code, Jira.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
-<!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-<div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between">
-                <div class="mb-8 md:mb-0">
-                    <h3 class="text-2xl font-bold mb-4">Geraldus Raja Muka</h3>
-                    <p class="text-gray-400 max-w-md">Mahasiswa Teknik Informatika Universitas Tarumanagara dengan passion di bidang pengembangan perangkat lunak dan web.</p>
-                </div>
-                
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-                    <div>
-                        <h4 class="font-semibold text-lg mb-4">Tautan Cepat</h4>
-                        <ul class="space-y-2">
-                            <li><a href="#beranda" class="text-gray-400 hover:text-white transition">Beranda</a></li>
-                            <li><a href="#tentang" class="text-gray-400 hover:text-white transition">Tentang</a></li>
-                            <li><a href="#portfolio" class="text-gray-400 hover:text-white transition">Portfolio</a></li>
-                            <li><a href="#pengalaman" class="text-gray-400 hover:text-white transition">Pengalaman</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-semibold text-lg mb-4">Kontak</h4>
-                        <ul class="space-y-2">
-                            <li class="flex items-center">
-                                <i data-feather="mail" class="w-4 h-4 mr-2"></i>
-                                <span class="text-gray-400">nama@email.com</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
-                                <span class="text-gray-400">Jakarta, Indonesia</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-semibold text-lg mb-4">Media Sosial</h4>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-gray-400 hover:text-white transition">
-                                <i data-feather="instagram"></i>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-white transition">
-                                <i data-feather="linkedin"></i>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-white transition">
-                                <i data-feather="github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-100">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-6 text-secondary">
+          Proyek <span class="text-primary">Portfolio</span>
+        </h2>
+        <p class="text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+          Berikut adalah beberapa proyek yang pernah saya kerjakan baik secara
+          mandiri maupun dalam tim selama perkuliahan.
+        </p>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-secondary">
+          <!-- Project 1 -->
+          <div
+            class="project-card bg-white rounded-xl overflow-hidden shadow-md">
+            <img
+              src="http://static.photos/technology/640x360/3"
+              alt="Project 1"
+              class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <h3 class="font-bold text-xl mb-2">Aplikasi E-Commerce</h3>
+              <p class="text-gray-600 mb-4">
+                Platform belanja online dengan fitur keranjang belanja dan
+                pembayaran digital.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                  >React</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                  >Node.js</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                  >MongoDB</span
+                >
+              </div>
+              <a href="#" class="text-primary font-medium flex items-center">
+                Lihat Detail
+                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+              </a>
             </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 Portofolio [Nama Anda]. All rights reserved.</p>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="project-card bg-white rounded-xl overflow-hidden shadow-md">
+            <img
+              src="http://static.photos/technology/640x360/4"
+              alt="Project 2"
+              class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <h3 class="font-bold text-xl mb-2">Sistem Informasi Akademik</h3>
+              <p class="text-gray-600 mb-4">
+                Sistem manajemen data akademik untuk sekolah dan universitas.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                  >Laravel</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                  >MySQL</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                  >Bootstrap</span
+                >
+              </div>
+              <a href="#" class="text-primary font-medium flex items-center">
+                Lihat Detail
+                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+              </a>
             </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="project-card bg-white rounded-xl overflow-hidden shadow-md">
+            <img
+              src="http://static.photos/technology/640x360/5"
+              alt="Project 3"
+              class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <h3 class="font-bold text-xl mb-2">Aplikasi Mobile To-Do List</h3>
+              <p class="text-gray-600 mb-4">
+                Aplikasi manajemen tugas dengan notifikasi dan sinkronisasi
+                cloud.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                  >Flutter</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                  >Firebase</span
+                >
+              </div>
+              <a href="#" class="text-primary font-medium flex items-center">
+                Lihat Detail
+                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
         </div>
+        <div class="text-center mt-12">
+          <button
+            onclick="toggleProjects()"
+            class="inline-block border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition">
+            Lihat Semua Proyek
+          </button>
+        </div>
+        <div
+          id="more-projects"
+          class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+          <!-- Project 4 -->
+          <div
+            class="project-card bg-white rounded-xl overflow-hidden shadow-md">
+            <img
+              src="http://static.photos/technology/640x360/6"
+              alt="Project 4"
+              class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <h3 class="font-bold text-xl mb-2">Landing Page Restoran</h3>
+              <p class="text-gray-600 mb-4">
+                Halaman promosi untuk restoran dengan menu online dan reservasi.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                  >HTML/CSS</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                  >JavaScript</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                  >Tailwind</span
+                >
+              </div>
+              <a href="#" class="text-primary font-medium flex items-center">
+                Lihat Detail
+                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div
+            class="project-card bg-white rounded-xl overflow-hidden shadow-md">
+            <img
+              src="http://static.photos/technology/640x360/7"
+              alt="Project 5"
+              class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <h3 class="font-bold text-xl mb-2">Dashboard Admin</h3>
+              <p class="text-gray-600 mb-4">
+                Antarmuka admin dengan visualisasi data dan grafik interaktif.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                  >React</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                  >Chart.js</span
+                >
+              </div>
+              <a href="#" class="text-primary font-medium flex items-center">
+                Lihat Detail
+                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div
+            class="project-card bg-white rounded-xl overflow-hidden shadow-md">
+            <img
+              src="http://static.photos/technology/640x360/8"
+              alt="Project 6"
+              class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <h3 class="font-bold text-xl mb-2">Portfolio Artist</h3>
+              <p class="text-gray-600 mb-4">
+                Gallery portfolio untuk seniman digital dengan efek scroll
+                animasi.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                  >GSAP</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                  >CSS3</span
+                >
+              </div>
+              <a href="#" class="text-primary font-medium flex items-center">
+                Lihat Detail
+                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="pengalaman" class="py-20 bg-gray-100">
+      <div class="container mx-auto px-6 text-secondary">
+        <h2 class="text-3xl font-bold text-center mb-16">
+          Pengalaman <span class="text-primary">Saya</span>
+        </h2>
+        <div class="max-w-3xl mx-auto space-y-8">
+          <!-- Experience 1 -->
+          <div class="mb-12">
+            <h3 class="text-xl font-semibold mb-1">
+              Ketua Himpunan Mahasiswa Informatika
+            </h3>
+            <p class="text-gray-500 mb-2">
+              Universitas Tarumanagara | 2022 - Sekarang
+            </p>
+            <p class="text-gray-600 text-justify">
+              Memimpin organisasi mahasiswa jurusan informatika dengan 150+
+              anggota. Bertanggung jawab atas kegiatan akademik dan
+              non-akademik, termasuk seminar teknologi dan kompetisi
+              programming.
+            </p>
+            <a href="#" class="text-primary font-medium flex items-center">
+              Lihat Detail
+              <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+            </a>
+          </div>
+          <!-- Experience 2 -->
+          <div class="mb-12">
+            <h3 class="text-xl font-semibold mb-1">Developer Intern</h3>
+            <p class="text-gray-500 mb-2">
+              PT. Solusi Teknologi Indonesia | 2021
+            </p>
+            <p class="text-gray-600 text-justify">
+              Magang sebagai full-stack developer selama 6 bulan. Berkontribusi
+              dalam pengembangan aplikasi manajemen proyek menggunakan React.js
+              dan Node.js.
+            </p>
+            <a href="#" class="text-primary font-medium flex items-center">
+              Lihat Detail
+              <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+            </a>
+          </div>
+          <!-- Experience 3 -->
+          <div class="mb-12">
+            <h3 class="text-xl font-semibold mb-1">Asisten Laboratorium</h3>
+            <p class="text-gray-500 mb-2">
+              Lab. Komputer Universitas Tarumanagara | 2020 - 2021
+            </p>
+            <p class="text-gray-600 text-justify">
+              Membantu dosen dalam praktikum pemrograman dasar dan struktur
+              data. Bertugas memeriksa tugas mahasiswa dan memberikan konsultasi
+              teknis.
+            </p>
+            <a href="#" class="text-primary font-medium flex items-center">
+              Lihat Detail
+              <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between">
+          <div class="mb-8 md:mb-0">
+            <h3 class="text-2xl font-bold mb-4">Geraldus Raja Muka</h3>
+            <p class="text-gray-400 max-w-md">
+              Mahasiswa Teknik Informatika Universitas Tarumanagara dengan
+              passion di bidang pengembangan perangkat lunak dan web.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div>
+              <h4 class="font-semibold text-lg mb-4">Tautan Cepat</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="#beranda"
+                    class="text-gray-400 hover:text-white transition"
+                    >Beranda</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#tentang"
+                    class="text-gray-400 hover:text-white transition"
+                    >Tentang</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#portfolio"
+                    class="text-gray-400 hover:text-white transition"
+                    >Portfolio</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#pengalaman"
+                    class="text-gray-400 hover:text-white transition"
+                    >Pengalaman</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-semibold text-lg mb-4">Kontak</h4>
+              <ul class="space-y-2">
+                <li class="flex items-center">
+                  <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                  <span class="text-gray-400">nama@email.com</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                  <span class="text-gray-400">Jakarta, Indonesia</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-semibold text-lg mb-4">Media Sosial</h4>
+              <div class="flex space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white transition">
+                  <i data-feather="instagram"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition">
+                  <i data-feather="linkedin"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition">
+                  <i data-feather="github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+          <p>&copy; Portofolio Geraldus Raja Muka, 2025</p>
+        </div>
+      </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.getElementById('menu-btn').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+      // Mobile menu toggle
+      document
+        .getElementById("menu-btn")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
         });
-        // Toggle more projects
-        function toggleProjects() {
-            const moreProjects = document.getElementById('more-projects');
-            moreProjects.classList.toggle('hidden');
-        }
+      // Toggle more projects
+      function toggleProjects() {
+        const moreProjects = document.getElementById("more-projects");
+        moreProjects.classList.toggle("hidden");
+      }
 
-        // Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                const mobileMenu = document.getElementById('mobile-menu');
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: "smooth",
+          });
+
+          // Close mobile menu if open
+          const mobileMenu = document.getElementById("mobile-menu");
+          if (!mobileMenu.classList.contains("hidden")) {
+            mobileMenu.classList.add("hidden");
+          }
         });
-        
-        // Feather icons
-        feather.replace();
+      });
+
+      // Feather icons
+      feather.replace();
     </script>
-</body>
+  </body>
 </html>
