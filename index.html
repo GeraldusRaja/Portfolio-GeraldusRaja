@@ -44,6 +44,24 @@
       .project-card:hover {
         transform: scale(1.03);
       }
+
+
+
+      /* CSS untuk transisi tombol scroll-to-top */
+      #scroll-to-top {
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        opacity: 0;
+        transform: translateY(20px);
+        pointer-events: none; /* Nonaktifkan interaksi saat tersembunyi */
+      }
+      
+      #scroll-to-top.show {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto; /* Aktifkan interaksi saat terlihat */
+      }
+
+
     </style>
   </head>
   <body class="bg-gradient-to-b from-gray-900 to-gray-100 text-gray-200">
@@ -362,6 +380,7 @@
         <div
           id="more-projects"
           class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 text-secondary">
+
           <!-- Project 4 -->
           <div
             class="project-card bg-white rounded-xl overflow-hidden shadow-md">
@@ -471,50 +490,44 @@
           <!-- Experience 1 -->
           <div class="mb-12">
             <h3 class="text-xl font-semibold mb-1">
-              Ketua Himpunan Mahasiswa Informatika
+               Kepala Divisi Arung Jeram Organisasi Mapala FTI UNTAR
             </h3>
             <p class="text-gray-500 mb-2">
-              Universitas Tarumanagara | 2022 - Sekarang
+              Universitas Tarumanagara | 2024 - Sekarang
             </p>
             <p class="text-gray-600 text-justify">
-              Memimpin organisasi mahasiswa jurusan informatika dengan 150+
-              anggota. Bertanggung jawab atas kegiatan akademik dan
-              non-akademik, termasuk seminar teknologi dan kompetisi
-              programming.
+              Bertanggung jawab penuh dalam mengkoordinasikan dan memimpin seluruh kegiatan serta program kerja divisi arung jeram. Mengatur seluruh perencanaan, pelatihan, dan pelaksanaan acara arung jeram, serta memastikan setiap kegiatan berjalan aman, terorganisir, dan sesuai dengan tujuan organisasi.
             </p>
-            <a href="#" class="text-primary font-medium flex items-center">
+            <a href="https://www.instagram.com/p/DCEL3R_SIVV/?igsh=eGtrYmZoMjU1dXVm" class="text-primary font-medium flex items-center">
               Lihat Detail
               <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
             </a>
           </div>
+
           <!-- Experience 2 -->
           <div class="mb-12">
-            <h3 class="text-xl font-semibold mb-1">Developer Intern</h3>
+            <h3 class="text-xl font-semibold mb-1">Bendahara Smartcamp (DIKSAR) Organisasi Mapala FTI UNTAR</h3>
             <p class="text-gray-500 mb-2">
-              PT. Solusi Teknologi Indonesia | 2021
+              Universitas Tarumanagara | 2024
             </p>
             <p class="text-gray-600 text-justify">
-              Magang sebagai full-stack developer selama 6 bulan. Berkontribusi
-              dalam pengembangan aplikasi manajemen proyek menggunakan React.js
-              dan Node.js.
+              Mengelola dan mengatur seluruh keuangan program kerja Smartcamp (pendidikan dasar) yang berlangsung selama beberapa hari, termasuk pencatatan cashflow, pengelolaan dana kegiatan, serta memastikan penggunaan anggaran berjalan efisien dan transparan.
             </p>
-            <a href="#" class="text-primary font-medium flex items-center">
+            <a href="https://www.instagram.com/reel/DGj-DmTSUkh/?igsh=aG9xemsyenFrNnJi" class="text-primary font-medium flex items-center">
               Lihat Detail
               <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
             </a>
           </div>
           <!-- Experience 3 -->
           <div class="mb-12">
-            <h3 class="text-xl font-semibold mb-1">Asisten Laboratorium</h3>
+            <h3 class="text-xl font-semibold mb-1">Wakil Ketua Pelaksana Turnamen Umum Jiujitsu UNTAR</h3>
             <p class="text-gray-500 mb-2">
-              Lab. Komputer Universitas Tarumanagara | 2020 - 2021
+              Universitas Tarumanagara | 2024
             </p>
             <p class="text-gray-600 text-justify">
-              Membantu dosen dalam praktikum pemrograman dasar dan struktur
-              data. Bertugas memeriksa tugas mahasiswa dan memberikan konsultasi
-              teknis.
+              Bertanggung jawab dalam mengoordinasikan pelaksanaan turnamen jiujitsu terbuka untuk umum dan profesional yang diselenggarakan oleh Universitas Tarumanagara, dengan dukungan dan kehadiran dari PBJI (Pengurus Besar Jiujitsu Indonesia). Mengawasi jalannya kegiatan agar berlangsung tertib, kompetitif, dan sesuai standar nasional.
             </p>
-            <a href="#" class="text-primary font-medium flex items-center">
+            <a href="https://www.instagram.com/reel/C-PUuEUyKXk/?igsh=Mzk0M3FicmoxNGE4" class="text-primary font-medium flex items-center">
               Lihat Detail
               <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
             </a>
@@ -631,6 +644,19 @@
       </div>
     </footer>
 
+
+    <button 
+      id="scroll-to-top" 
+      class="fixed bottom-6 right-6 p-3 bg-primary text-white rounded-full 
+             shadow-xl hover:bg-indigo-400 active:bg-indigo-500 
+             z-[999] opacity-0 transform translate-y-5"
+      aria-label="Kembali ke Atas"
+    >
+      <i data-feather="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+
+
     <script>
       // Mobile menu toggle
       document
@@ -666,6 +692,34 @@
         });
       });
 
+      // Feather icons
+      feather.replace();
+
+
+
+
+      // --- LOGIKA SCROLL TO TOP (NEW FEATURE) ---
+      const scrollToTopBtn = document.getElementById('scroll-to-top');
+    
+      // 1. Fungsi untuk mengatur tampilan tombol
+      window.addEventListener('scroll', () => {
+          // Tampilkan tombol jika posisi scroll lebih dari 300px
+          if (window.scrollY > 300) {
+              scrollToTopBtn.classList.add('show');
+          } else {
+              scrollToTopBtn.classList.remove('show');
+          }
+      });
+
+      // 2. Fungsi untuk melakukan smooth scroll ke atas
+      scrollToTopBtn.addEventListener('click', () => {
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth' // Membuat animasi gulir menjadi halus
+          });
+      });
+      // --- END LOGIKA SCROLL TO TOP ---
+      
       // Feather icons
       feather.replace();
     </script>
